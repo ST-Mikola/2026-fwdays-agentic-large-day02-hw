@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-- Snapshot date: **April 23, 2026**.
+- Snapshot date: **May 6, 2026**.
 - Scope: architectural and product-level decisions observable in the current codebase and Memory Bank baseline.
 - Note: these entries are inferred from implementation and current structure, not from a formal ADR directory.
 
@@ -103,6 +103,14 @@
 - Why: preserve baseline startup experience while enabling richer workflows when available.
 - Consequences: optional services are guarded by runtime checks and env-backed endpoints.
 - Evidence: `excalidraw-app/index.tsx`, `excalidraw-app/App.tsx`, `excalidraw-app/components/AI.tsx`.
+
+### D-013: Memory Bank Maintenance Uses Explicit Rule-To-Skill Handoff
+
+- Status: Accepted.
+- Decision: activate Memory Bank maintenance through `.cursor/rules/memory-bank.mdc` and keep the update workflow in `.cursor/skills/memory-bank-update/SKILL.md`.
+- Why: keeps activation explicit, removes duplicated workflow instructions from the rule, and makes future maintenance changes easier to localize.
+- Consequences: rule edits should focus on scope/activation, while procedural updates belong in the skill file; workflow changes should review both files together.
+- Evidence: `.cursor/rules/memory-bank.mdc`, `.cursor/skills/memory-bank-update/SKILL.md`, `AGENTS.md`.
 
 ## Undocumented Behavior Entries
 

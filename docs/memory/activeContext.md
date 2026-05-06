@@ -2,12 +2,13 @@
 
 ## Snapshot Date
 
-- Context snapshot date: **April 23, 2026**.
+- Context snapshot date: **May 6, 2026**.
 - Scope of this file: current working focus for this repository and the Memory Bank baseline.
 
 ## Current Focus
 
 - Keep the Excalidraw Memory Bank synchronized with the real codebase structure and flows.
+- Keep repo-local Cursor rules and skills aligned with documented maintenance workflows.
 - Treat `excalidraw-app` as the primary product surface and `packages/*` as the engine/platform layer.
 - Preserve high confidence in collaboration, persistence, and sharing flows, because these are the highest UX-risk paths.
 - Document decisions and hotspots in `docs/memory/*` so future work starts with verified context, not assumptions.
@@ -21,11 +22,13 @@
 - `productContext.md` created with UX goals and key user scenarios.
 - `progress.md` created to track Memory Bank completion state and update triggers.
 - `decisionLog.md` created to capture durable architectural and product-flow decisions inferred from the codebase.
+- Added `.cursor/rules/memory-bank.mdc` and aligned the `memory-bank-update` skill so Memory Bank activation is explicit and the workflow stays in one place.
 - These files are now internally aligned around the same repo model: monorepo app shell + reusable editor engine + collaboration/persistence integrations.
 
 ## Immediate Working Priorities
 
 - Finalize and maintain this Memory Bank set as the source of operational context.
+- Keep `.cursor/rules/memory-bank.mdc` and `.cursor/skills/memory-bank-update/SKILL.md` in sync when the maintenance workflow changes.
 - Keep bonus Memory Bank files focused on current work instead of repeating project-wide facts from other docs.
 - Keep architecture and product documentation tied to concrete files when code changes.
 - Prioritize review of changes affecting collaboration session lifecycle (`collab/`).

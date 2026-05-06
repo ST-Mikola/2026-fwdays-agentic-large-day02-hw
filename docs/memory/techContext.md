@@ -101,6 +101,12 @@
 - Environment templates exist: `.env.development`, `.env.production`.
 - Build scripts inject Vite flags such as `VITE_APP_DISABLE_SENTRY` and `VITE_APP_ENABLE_TRACKING`.
 
+## Local Agent Tooling
+
+- Repo-local Cursor rules live under `.cursor/rules/*.mdc`.
+- Repo-local Cursor skills live under `.cursor/skills/*/SKILL.md`.
+- Memory Bank maintenance is activated by `.cursor/rules/memory-bank.mdc` and implemented by `.cursor/skills/memory-bank-update/SKILL.md`.
+
 ## Details
 
 For detailed architecture → see [architecture.md](../technical/architecture.md)  

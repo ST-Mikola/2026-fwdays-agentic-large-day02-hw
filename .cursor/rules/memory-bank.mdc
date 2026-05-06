@@ -1,0 +1,21 @@
+---
+description: "Memory Bank maintenance workflow"
+globs: "docs/memory/**"
+alwaysApply: true
+---
+
+# Memory Bank
+
+Use the `memory-bank-update` skill for Memory Bank maintenance tasks.
+
+## Scope
+
+- Updating files under `docs/memory/`
+- Syncing durable project context after verified changes
+- Refreshing Memory Bank docs on explicit request
+
+## Guidance
+
+- Keep activation and scope in this rule.
+- Keep the update workflow in `.cursor/skills/memory-bank-update/SKILL.md`.
+- Do not treat this rule as a blanket instruction for unrelated edits.
