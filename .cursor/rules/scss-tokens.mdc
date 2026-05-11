@@ -1,0 +1,12 @@
+---
+description: "SCSS token and CSS variable usage"
+globs: "packages/excalidraw/**/*.scss,excalidraw-app/**/*.scss"
+alwaysApply: false
+---
+
+# SCSS Tokens
+
+- Prefer existing CSS custom properties and shared SCSS tokens before introducing new raw values.
+- Check `packages/excalidraw/css/variables.module.scss`, `packages/excalidraw/css/theme.scss`, and nearby component styles for existing tokens first.
+- New reusable colors, spacing, radii, and sizing values should become shared tokens instead of repeated literals.
+- Raw literals are acceptable for one-off alpha blends, shadows, or browser-specific values when no existing token expresses the intent.

@@ -1,20 +1,21 @@
 ---
-description: "Protected files that should not be modified"
+description: "High-risk Excalidraw engine files that require extra care"
 globs: "packages/excalidraw/**"
 alwaysApply: true
 ---
 
-# Protected Files
+# High-Risk Files
 
-NEVER modify these files without explicit approval:
+Avoid changing these files unless the task clearly requires it:
 
-- `packages/excalidraw/scene/renderer.ts` — render pipeline
+- `packages/excalidraw/scene/Renderer.ts` — render pipeline
 - `packages/excalidraw/data/restore.ts` — file format compat
-- `packages/excalidraw/actions/manager.ts` — action system
+- `packages/excalidraw/actions/manager.tsx` — action system
 - `packages/excalidraw/types.ts` — core types
+- `packages/excalidraw/components/App.tsx` — editor orchestration and lifecycle hub
 
-Changes to protected files require:
+Changes here require:
 
-1. Full understanding of dependencies
-2. Running complete test suite
-3. Manual QA verification
+1. Reading dependent call sites and nearby tests first
+2. Running focused tests and type checks for the touched behavior when feasible
+3. Explaining the risk in the final summary if one of these files changed

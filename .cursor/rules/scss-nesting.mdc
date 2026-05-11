@@ -1,0 +1,12 @@
+---
+description: "SCSS selector nesting discipline"
+globs: "packages/excalidraw/**/*.scss,excalidraw-app/**/*.scss"
+alwaysApply: false
+---
+
+# SCSS Nesting
+
+- Keep new selector nesting shallow; target a maximum of three levels for newly added rules.
+- Prefer modifier classes, data attributes, or small helper classes over deep descendant chains.
+- One extra nesting level is acceptable for state selectors, aria attributes, or shared mixin wrappers when flattening would reduce clarity.
+- When editing legacy SCSS, improve local nesting if practical, but do not refactor large files just to satisfy this rule.

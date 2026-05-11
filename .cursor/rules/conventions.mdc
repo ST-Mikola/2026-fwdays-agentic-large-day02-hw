@@ -1,25 +1,24 @@
 ---
-description: "Code conventions for Excalidraw components and utilities"
-globs: packages/**/*.ts,packages/**/*.tsx
+description: "Code conventions aligned with existing Excalidraw source patterns"
+globs: "packages/**/*.ts,packages/**/*.tsx,excalidraw-app/**/*.ts,excalidraw-app/**/*.tsx"
 alwaysApply: false
 ---
 
 # Code Conventions
 
-## Components
+## Existing Patterns
 
-- Functional components + hooks ONLY (no class components)
-- Props interface: `{ComponentName}Props`
-- Named exports only (no default exports)
-- Colocated tests: `ComponentName.test.tsx`
+- Follow the surrounding module's style instead of forcing global rewrites.
+- Existing code uses a mix of function components, default exports, named exports, and one major class component (`packages/excalidraw/components/App.tsx`).
+- Match nearby test placement: some areas colocate tests, others use centralized `packages/excalidraw/tests` or `excalidraw-app/tests`.
 
 ## TypeScript
 
 - Strict mode — no `any`, no `@ts-ignore`
-- Prefer `type` over `interface` for simple types
 - Import types: `import type { X } from "..."`
+- Prefer `type` for simple aliases, but keep `interface` where it matches local patterns or React props/state conventions.
 
 ## Files
 
-- kebab-case for files: `element-utils.ts`
-- PascalCase for components: `LayerUI.tsx`
+- Use PascalCase for UI component files.
+- Keep helper and support modules in the local style, for example `common.ts`, `types.ts`, `utils.ts`, `keyboardNavHandlers.ts`, or `index.tsx`.

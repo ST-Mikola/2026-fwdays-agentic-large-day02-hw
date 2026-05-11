@@ -1,0 +1,18 @@
+---
+description: "Component file naming and maintenance guidance"
+globs: "packages/excalidraw/components/**/*.ts,packages/excalidraw/components/**/*.tsx"
+alwaysApply: false
+---
+
+# Components
+
+## File Naming
+
+- New UI component files should use PascalCase names, for example `MyComponent.tsx`.
+- Helper modules inside component folders may use established support names such as `common.ts`, `types.ts`, `utils.ts`, `index.tsx`, or `keyboardNavHandlers.ts`.
+
+## Changes Around New Components
+
+- For behaviorful new components, add or update tests following the nearest local pattern instead of forcing a new global test style.
+- Do not require Storybook for this repository; document public API or user-visible workflow changes in code comments or project docs only when they materially help future work.
+- Follow neighboring export style rather than converting surrounding files between default and named exports.

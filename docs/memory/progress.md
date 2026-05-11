@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-- Snapshot date: **May 6, 2026**.
+- Snapshot date: **May 11, 2026**.
 - Scope: progress tracking for the Memory Bank workstream in this repository.
 
 ## Goal Tracking
@@ -28,6 +28,7 @@
 - Created `docs/memory/decisionLog.md` to capture durable decisions and their consequences.
 - Added Memory Bank cross-links to Technical and Product docs, including `docs/product/PRD.md`.
 - Added `.cursor/rules/memory-bank.mdc` and moved Memory Bank activation guidance there, while keeping the update procedure in `.cursor/skills/memory-bank-update/SKILL.md`.
+- Revised outdated repo-local rules and expanded `.cursor/rules` to nine rule files, including locale, SCSS, component, and collaboration guidance.
 
 ## Validation Work Performed
 
@@ -69,6 +70,7 @@
 - Changes to build/runtime tooling (Node/Yarn/Vite/test scripts).
 - Changes to primary UX surfaces (menu, welcome, share, command palette, sidebar).
 - Changes to repo-local Cursor rules or skills that affect Memory Bank maintenance (`.cursor/rules/memory-bank.mdc`, `.cursor/skills/memory-bank-update/SKILL.md`).
+- Changes to repo-local Cursor rules that encode coding conventions or module-specific constraints (`.cursor/rules/locales.mdc`, `.cursor/rules/scss-*.mdc`, `.cursor/rules/components.mdc`, `.cursor/rules/collab-module.mdc`).
 
 ## Details
 

@@ -1,0 +1,23 @@
+---
+description: "Locale file maintenance and translation consistency"
+globs: "packages/excalidraw/locales/*.json"
+alwaysApply: false
+---
+
+# Locales
+
+## Source Of Truth
+
+- Treat `packages/excalidraw/locales/en.json` as the structural source of truth for keys and nesting.
+- Keep other locale files aligned to the same key paths and nesting when making manual locale changes.
+
+## Manual Edit Rules
+
+- This repository uses Crowdin for translations, so avoid rewriting existing translated strings unless the task is explicitly about locale maintenance.
+- If a new key must be added manually, mirror that key path in other locale files with `""` instead of inventing translations.
+- Do not edit `packages/excalidraw/locales/percentages.json` manually; it is generated.
+
+## Ordering And Validation
+
+- Preserve the existing key order to match `en.json`, including nested objects.
+- When locale files change, call out any remaining empty-string placeholders in the summary instead of silently ignoring them.

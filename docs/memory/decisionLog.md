@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-- Snapshot date: **May 6, 2026**.
+- Snapshot date: **May 11, 2026**.
 - Scope: architectural and product-level decisions observable in the current codebase and Memory Bank baseline.
 - Note: these entries are inferred from implementation and current structure, not from a formal ADR directory.
 
@@ -111,6 +111,14 @@
 - Why: keeps activation explicit, removes duplicated workflow instructions from the rule, and makes future maintenance changes easier to localize.
 - Consequences: rule edits should focus on scope/activation, while procedural updates belong in the skill file; workflow changes should review both files together.
 - Evidence: `.cursor/rules/memory-bank.mdc`, `.cursor/skills/memory-bank-update/SKILL.md`, `AGENTS.md`.
+
+### D-014: Repo-Local Rules Should Encode Actual Repository Workflows, Not Generic Defaults
+
+- Status: Accepted.
+- Decision: align `.cursor/rules/*.mdc` with verified repository behavior, including Crowdin-managed locales, shared SCSS token usage, shallow SCSS nesting guidance, component file naming, and collaboration-module constraints.
+- Why: generic generated rules had already drifted from the codebase, creating false guidance around class components, export style, protected file paths, and localization workflow.
+- Consequences: rule maintenance now requires validating against source patterns and workflow docs before adding new constraints; high-overlap areas such as locales and SCSS should prefer precise, repo-specific wording over boilerplate lint-like mandates.
+- Evidence: `.cursor/rules/architecture.mdc`, `.cursor/rules/conventions.mdc`, `.cursor/rules/do-not-touch.mdc`, `.cursor/rules/locales.mdc`, `.cursor/rules/scss-tokens.mdc`, `.cursor/rules/scss-nesting.mdc`, `.cursor/rules/components.mdc`, `.cursor/rules/collab-module.mdc`, `packages/excalidraw/locales/README.md`, `scripts/build-locales-coverage.js`.
 
 ## Undocumented Behavior Entries
 

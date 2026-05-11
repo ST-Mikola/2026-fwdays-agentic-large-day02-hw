@@ -1,26 +1,30 @@
 ---
-description: "Architecture constraints for Excalidraw"
-globs: packages/excalidraw/**
+description: "Architecture constraints for the Excalidraw editor package"
+globs: "packages/excalidraw/**"
 alwaysApply: false
 ---
 
-When you are creating any code with this rule active you must output to chat message "Architecture constraints" so I know you are using the correct rules.
-
 # Excalidraw Architecture
 
-## State Management
+## Boundaries
 
-- Custom state via actionManager — NOT Redux/Zustand/MobX
-- State updates: actionManager.dispatch() ONLY
-- State type: AppState (packages/excalidraw/types.ts)
+- Keep `packages/excalidraw` focused on editor-engine concerns.
+- App-specific collaboration, Firebase, and product-shell UX belong in `excalidraw-app`.
+- Reuse local helpers and packages before adding new dependencies.
+
+## State And Commands
+
+- Respect the split between React `AppState` and non-React `Scene` / `Store` / `History`.
+- For editor commands, prefer the existing action system and `syncActionResult(...)` flow over ad hoc parallel command paths.
+- Avoid introducing new global state managers.
 
 ## Rendering
 
-- Canvas 2D rendering — NOT React DOM for drawing
-- Render pipeline: Scene → renderScene() → canvas context
-- DO NOT use react-konva, fabric.js, pixi.js
+- Core drawing stays on the canvas renderer pipeline, not React DOM.
+- Preserve the `Scene` to renderer to canvas flow and viewport-aware rendering behavior.
+- Do not introduce alternate canvas/rendering frameworks for editor rendering.
 
 ## Dependencies
 
 - No new npm packages without explicit approval
-- Check packages/utils/ before adding external helpers
+- Check local packages and existing utilities before adding external helpers
