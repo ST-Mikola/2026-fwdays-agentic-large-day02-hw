@@ -10,3 +10,7 @@ alwaysApply: false
 - Prefer modifier classes, data attributes, or small helper classes over deep descendant chains.
 - One extra nesting level is acceptable for state selectors, aria attributes, or shared mixin wrappers when flattening would reduce clarity.
 - When editing legacy SCSS, improve local nesting if practical, but do not refactor large files just to satisfy this rule.
+
+### How to verify
+
+Review a changed SCSS block and confirm newly added selectors stay at three nesting levels or less unless the extra level is a justified state or wrapper case, and that no broad legacy-only refactor was introduced.

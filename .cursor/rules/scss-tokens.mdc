@@ -10,3 +10,7 @@ alwaysApply: false
 - Check `packages/excalidraw/css/variables.module.scss`, `packages/excalidraw/css/theme.scss`, and nearby component styles for existing tokens first.
 - New reusable colors, spacing, radii, and sizing values should become shared tokens instead of repeated literals.
 - Raw literals are acceptable for one-off alpha blends, shadows, or browser-specific values when no existing token expresses the intent.
+
+### How to verify
+
+Inspect a SCSS change and confirm reusable visual values come from existing or newly introduced shared tokens, while any remaining raw literals are limited to justified one-off cases such as shadows or alpha blends.

@@ -28,3 +28,7 @@ alwaysApply: false
 
 - No new npm packages without explicit approval
 - Check local packages and existing utilities before adding external helpers
+
+### How to verify
+
+Make a small editor-package change under `packages/excalidraw/` and confirm the implementation stays in package scope, uses existing action/state/rendering paths, and does not introduce app-shell logic or a new rendering/state framework.

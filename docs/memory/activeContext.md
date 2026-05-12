@@ -2,7 +2,7 @@
 
 ## Snapshot Date
 
-- Context snapshot date: **May 11, 2026**.
+- Context snapshot date: **May 12, 2026**.
 - Scope of this file: current working focus for this repository and the Memory Bank baseline.
 
 ## Current Focus
@@ -10,6 +10,7 @@
 - Keep the Excalidraw Memory Bank synchronized with the real codebase structure and flows.
 - Keep repo-local Cursor rules and skills aligned with documented maintenance workflows.
 - Keep the expanded `.cursor/rules` set aligned with real repository workflows for locales, SCSS, components, and collaboration.
+- Keep repo-local Cursor commands aligned with repeatable project workflows instead of generic scaffolding.
 - Treat `excalidraw-app` as the primary product surface and `packages/*` as the engine/platform layer.
 - Preserve high confidence in collaboration, persistence, and sharing flows, because these are the highest UX-risk paths.
 - Document decisions and hotspots in `docs/memory/*` so future work starts with verified context, not assumptions.
@@ -25,6 +26,8 @@
 - `decisionLog.md` created to capture durable architectural and product-flow decisions inferred from the codebase.
 - Added `.cursor/rules/memory-bank.mdc` and aligned the `memory-bank-update` skill so Memory Bank activation is explicit and the workflow stays in one place.
 - Expanded `.cursor/rules` to cover locales, SCSS token usage, SCSS nesting, component maintenance, and a module-specific collaboration rule.
+- Added a `### How to verify` section to each repo-local Cursor rule so rule application has an explicit validation path.
+- Added project-level Cursor commands in `.cursor/commands/` for locale-key propagation and component creation workflows.
 - These files are now internally aligned around the same repo model: monorepo app shell + reusable editor engine + collaboration/persistence integrations.
 
 ## Immediate Working Priorities

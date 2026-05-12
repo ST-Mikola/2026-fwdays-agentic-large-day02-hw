@@ -19,3 +19,7 @@ Use the `memory-bank-update` skill for Memory Bank maintenance tasks.
 - Keep activation and scope in this rule.
 - Keep the update workflow in `.cursor/skills/memory-bank-update/SKILL.md`.
 - Do not treat this rule as a blanket instruction for unrelated edits.
+
+### How to verify
+
+After a durable project-context change, confirm the relevant files under `docs/memory/` were updated, the procedural workflow still lives in `.cursor/skills/memory-bank-update/SKILL.md`, and unrelated edits did not trigger broad memory-bank churn.

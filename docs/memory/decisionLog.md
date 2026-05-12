@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-- Snapshot date: **May 11, 2026**.
+- Snapshot date: **May 12, 2026**.
 - Scope: architectural and product-level decisions observable in the current codebase and Memory Bank baseline.
 - Note: these entries are inferred from implementation and current structure, not from a formal ADR directory.
 
@@ -119,6 +119,22 @@
 - Why: generic generated rules had already drifted from the codebase, creating false guidance around class components, export style, protected file paths, and localization workflow.
 - Consequences: rule maintenance now requires validating against source patterns and workflow docs before adding new constraints; high-overlap areas such as locales and SCSS should prefer precise, repo-specific wording over boilerplate lint-like mandates.
 - Evidence: `.cursor/rules/architecture.mdc`, `.cursor/rules/conventions.mdc`, `.cursor/rules/do-not-touch.mdc`, `.cursor/rules/locales.mdc`, `.cursor/rules/scss-tokens.mdc`, `.cursor/rules/scss-nesting.mdc`, `.cursor/rules/components.mdc`, `.cursor/rules/collab-module.mdc`, `packages/excalidraw/locales/README.md`, `scripts/build-locales-coverage.js`.
+
+### D-015: Project-Level Cursor Commands Should Capture Repeatable Repo-Specific Workflows
+
+- Status: Accepted.
+- Decision: store reusable team workflows as project commands under `.cursor/commands/*.md`, and keep their instructions aligned with actual repository ownership and conventions.
+- Why: repeated tasks such as locale-key propagation and component creation benefit from a one-command entry point, but generic scaffolding commands easily drift from Crowdin, SCSS-token, export-style, and testing conventions.
+- Consequences: command prompts should stay plain Markdown, remain repo-specific, and be reviewed when local rules or workflow boundaries change.
+- Evidence: `.cursor/commands/add-translation.md`, `.cursor/commands/create-component.md`, `packages/excalidraw/locales/README.md`, `.cursor/rules/components.mdc`, `.cursor/rules/locales.mdc`.
+
+### D-016: Repo-Local Rules Should Include an Explicit Verification Scenario
+
+- Status: Accepted.
+- Decision: end every `.cursor/rules/*.mdc` file with a `### How to verify` section that describes a short, concrete validation scenario.
+- Why: rules are easier to apply consistently when each one includes a minimal check for whether the intended constraint was actually followed.
+- Consequences: future rule additions or rewrites should include both the guidance and its verification path; rule maintenance now includes keeping these scenarios current with repository workflows.
+- Evidence: `.cursor/rules/architecture.mdc`, `.cursor/rules/conventions.mdc`, `.cursor/rules/do-not-touch.mdc`, `.cursor/rules/locales.mdc`, `.cursor/rules/memory-bank.mdc`, `.cursor/rules/scss-nesting.mdc`, `.cursor/rules/scss-tokens.mdc`, `.cursor/rules/components.mdc`, `.cursor/rules/collab-module.mdc`.
 
 ## Undocumented Behavior Entries
 

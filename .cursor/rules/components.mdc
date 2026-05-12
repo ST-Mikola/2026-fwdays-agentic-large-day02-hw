@@ -16,3 +16,7 @@ alwaysApply: false
 - For behaviorful new components, add or update tests following the nearest local pattern instead of forcing a new global test style.
 - Do not require Storybook for this repository; document public API or user-visible workflow changes in code comments or project docs only when they materially help future work.
 - Follow neighboring export style rather than converting surrounding files between default and named exports.
+
+### How to verify
+
+Create or review a component change in `packages/excalidraw/components/` and confirm UI component files use PascalCase, helper files follow local support naming, and any meaningful new behavior is paired with tests in the nearest established location.

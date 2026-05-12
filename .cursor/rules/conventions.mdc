@@ -22,3 +22,7 @@ alwaysApply: false
 
 - Use PascalCase for UI component files.
 - Keep helper and support modules in the local style, for example `common.ts`, `types.ts`, `utils.ts`, `keyboardNavHandlers.ts`, or `index.tsx`.
+
+### How to verify
+
+Inspect a touched TypeScript or TSX file and confirm it matches the surrounding module's export style, typing style, test placement, and file naming instead of introducing a repo-wide convention shift.

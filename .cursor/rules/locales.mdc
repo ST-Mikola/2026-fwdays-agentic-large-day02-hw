@@ -21,3 +21,7 @@ alwaysApply: false
 
 - Preserve the existing key order to match `en.json`, including nested objects.
 - When locale files change, call out any remaining empty-string placeholders in the summary instead of silently ignoring them.
+
+### How to verify
+
+Add or review a locale key change and confirm `en.json` defines the structure, other locale files mirror the same key path, `percentages.json` remains untouched, and any `""` placeholders are explicitly reported.

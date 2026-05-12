@@ -105,8 +105,11 @@
 
 - Repo-local Cursor rules live under `.cursor/rules/*.mdc`.
 - Repo-local Cursor skills live under `.cursor/skills/*/SKILL.md`.
+- Repo-local Cursor commands live under `.cursor/commands/*.md`.
 - Memory Bank maintenance is activated by `.cursor/rules/memory-bank.mdc` and implemented by `.cursor/skills/memory-bank-update/SKILL.md`.
 - The repo-local rule set also includes guidance for locales, SCSS token usage, SCSS nesting, component maintenance, and the collaboration module.
+- Each repo-local rule file now ends with a `### How to verify` section describing a minimal validation scenario.
+- Project commands currently cover repeated workflows for locale-key propagation and component creation.
 
 ## Details
 

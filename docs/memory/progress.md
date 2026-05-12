@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-- Snapshot date: **May 11, 2026**.
+- Snapshot date: **May 12, 2026**.
 - Scope: progress tracking for the Memory Bank workstream in this repository.
 
 ## Goal Tracking
@@ -29,6 +29,8 @@
 - Added Memory Bank cross-links to Technical and Product docs, including `docs/product/PRD.md`.
 - Added `.cursor/rules/memory-bank.mdc` and moved Memory Bank activation guidance there, while keeping the update procedure in `.cursor/skills/memory-bank-update/SKILL.md`.
 - Revised outdated repo-local rules and expanded `.cursor/rules` to nine rule files, including locale, SCSS, component, and collaboration guidance.
+- Added `### How to verify` sections to every `.cursor/rules/*.mdc` file.
+- Added two project-level Cursor commands in `.cursor/commands/` for translation-key propagation and component creation.
 
 ## Validation Work Performed
 
@@ -71,6 +73,8 @@
 - Changes to primary UX surfaces (menu, welcome, share, command palette, sidebar).
 - Changes to repo-local Cursor rules or skills that affect Memory Bank maintenance (`.cursor/rules/memory-bank.mdc`, `.cursor/skills/memory-bank-update/SKILL.md`).
 - Changes to repo-local Cursor rules that encode coding conventions or module-specific constraints (`.cursor/rules/locales.mdc`, `.cursor/rules/scss-*.mdc`, `.cursor/rules/components.mdc`, `.cursor/rules/collab-module.mdc`).
+- Changes to the verification expectations encoded at the end of repo-local rule files (`### How to verify` sections in `.cursor/rules/*.mdc`).
+- Changes to repo-local Cursor commands that define repeated engineering workflows (`.cursor/commands/*.md`).
 
 ## Details
 

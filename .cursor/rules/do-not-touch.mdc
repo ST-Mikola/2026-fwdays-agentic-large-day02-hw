@@ -19,3 +19,7 @@ Changes here require:
 1. Reading dependent call sites and nearby tests first
 2. Running focused tests and type checks for the touched behavior when feasible
 3. Explaining the risk in the final summary if one of these files changed
+
+### How to verify
+
+If one of the listed high-risk files changes, confirm the related dependents and tests were reviewed first, targeted verification was run when feasible, and the change summary explicitly calls out the risk and rationale.

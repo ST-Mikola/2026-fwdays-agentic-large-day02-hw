@@ -10,3 +10,7 @@ alwaysApply: false
 - Do not bypass `Portal` for websocket broadcast or encrypted payload handling.
 - Collaboration startup has multiple initialization paths; changes to room bootstrapping should keep the `INIT`, connect-error, and timeout flows intact unless accompanied by focused tests.
 - Remote scene updates must preserve the existing version-tracking and no-undo behavior expectations.
+
+### How to verify
+
+Review a collaboration change under `excalidraw-app/collab/` and confirm session orchestration still lives in `Collab`, socket/encryption logic still lives in `Portal`, and startup or remote-update changes preserve the existing tested flows.
